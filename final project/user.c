@@ -45,9 +45,7 @@ void view_user_data(User *user) {
     } else {
         printf("No books currently borrowed.\n");
     }
-
-    // Display library card ID if available (assuming it's in User struct)
-    // printf("Library Card ID: %d\n", user->library_card_id);
+    printf("Library Card ID: %d\n", user->library_card_id);
 }
 
 void change_password(User *user) {
@@ -71,7 +69,7 @@ void change_password(User *user) {
 
     // Request new login after password change
     printf("Please log in again with your new password.\n");
-    user_login(); // Assuming user_login() handles the login process
+    user_login(); 
 }
 
 
@@ -84,7 +82,7 @@ BorrowRequest* create_borrow_request(User *user, Book *book) {
 
     new_request->user = user;
     new_request->book = book;
-    new_request->status = 0; // 0 for waiting approval, 1 for approved, -1 for denied
+    new_request->status = 0; 
     new_request->next = NULL;
 
     // Add the new request to the global list of borrow requests
@@ -126,7 +124,6 @@ void request_borrow_book(User *user) {
         current_book = current_book->next;
     }
 
-    // Prompt user to choose a book
     printf("Enter the ID of the book you want to borrow: ");
     scanf("%d", &book_id);
 
@@ -201,9 +198,7 @@ void buy_book(User *user) {
             scanf("%s", card_id);
             printf("Enter your library card password: ");
             scanf("%s", card_password);
-
-            // Here, we assume card_id and card_password are correct
-            // and the user has enough balance.
+            
             if (card_balance >= total_price) {
                 card_balance -= total_price;
                 printf("Paid %.2f with library card. Remaining balance: %.2f\n", total_price, card_balance);
@@ -292,7 +287,7 @@ void user_mode(User *user) {
         printf("9. Logout\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
-        getchar(); // Consume newline character left in buffer
+        getchar(); 
 
         switch (choice) {
             case 1:
