@@ -19,7 +19,7 @@ void reserve_book(User *user, Book *book) {
     }
 
     // Reserve the book
-    book->available = 0; // Mark the book as reserved (not available)
+    book->available = 0; 
 
     ReservedBook *new_reserved_book = (ReservedBook *)malloc(sizeof(ReservedBook));
     if (new_reserved_book == NULL) {
@@ -169,7 +169,7 @@ void add_book() {
     printf("Enter book author: ");
     scanf(" %[^\n]", new_book->author);
     printf("Enter book price: ");
-    scanf("%f", &new_book->price); // Prompt for book price
+    scanf("%f", &new_book->price); 
     new_book->id = (book_head ? book_head->id + 1 : 1);
     new_book->available = 1;
     new_book->next = book_head;
@@ -344,7 +344,6 @@ void make_reservation() {
         char reserve_more;
 
         do {
-            // Display all books
             Book *current_book = book_head;
             printf("Available Books:\n");
             while (current_book) {
