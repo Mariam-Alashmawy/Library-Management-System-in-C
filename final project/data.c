@@ -12,10 +12,6 @@ void init_data() {
     load_admins();
 }
 
-void load_data() {
-    // Can be used to load initial data if required
-}
-
 void save_data() {
     save_books();
     save_users();
