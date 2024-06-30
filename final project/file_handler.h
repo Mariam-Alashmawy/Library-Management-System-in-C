@@ -10,5 +10,5 @@ void save_users();
 void load_admins();
 void save_admins();
 
-#endif // FILE_HANDLER_H
+#endif
 
